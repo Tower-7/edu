@@ -1,0 +1,577 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 头条小程序组件内不能引入字体 */
+
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 隔断线颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.scroll-h.data-v-1c7feefe {
+  width: 750rpx;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  padding-top: 20rpx;
+  background-color: #000;
+  color: #fff;
+  white-space: nowrap;
+  /* flex-wrap: nowrap; */
+  /* border-color: #cccccc;
+	border-bottom-style: solid;
+	border-bottom-width: 1px; */
+}
+.line-h.data-v-1c7feefe {
+  height: 1rpx;
+  background-color: #eee;
+}
+.line-h-b.data-v-1c7feefe {
+  height: 20rpx;
+  background-color: #e6ecf1;
+}
+.uni-tab-item.data-v-1c7feefe {
+  display: inline-block;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  padding-left: 34rpx;
+  padding-right: 34rpx;
+  border-bottom: 2px solid #000;
+}
+.uni-tab-item-active.data-v-1c7feefe {
+  border-bottom: 2px solid #1eb2a6;
+}
+.uni-tab-item-title.data-v-1c7feefe {
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.uni-tab-item-title-active.data-v-1c7feefe {
+  color: #1eb2a6;
+}
+.date.data-v-1c7feefe {
+  text-align: center;
+  font-size: 50rpx;
+  line-height: 80rpx;
+}
+.week.data-v-1c7feefe {
+  text-align: center;
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+.week text.data-v-1c7feefe {
+    background-color: #FFFFFF;
+    padding: 0 20rpx;
+}
+.week .line-middle.data-v-1c7feefe {
+    position: relative;
+    top: -20rpx;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 80%;
+    height: 2rpx;
+    background-color: #000000;
+    z-index: -1;
+}
+.news.data-v-1c7feefe {
+  padding: 20rpx;
+}
+.news .user_info.data-v-1c7feefe {
+    line-height: 70rpx;
+}
+.news .user_info .avatar.data-v-1c7feefe {
+      width: 50rpx;
+      height: 50rpx;
+      vertical-align: middle;
+      margin-right: 8rpx;
+}
+.news .user_info text.data-v-1c7feefe {
+      font-size: 28rpx;
+}
+.news .pic image.data-v-1c7feefe {
+    width: 100%;
+}
+.news .title_info.data-v-1c7feefe {
+    margin-bottom: 30rpx;
+}
+.news .title_info .title.data-v-1c7feefe {
+      font-size: 32rpx;
+      line-height: 70rpx;
+}
+.news .title_info .intro.data-v-1c7feefe {
+      font-size: 24rpx;
+      color: #aaa;
+}
+.news .set.data-v-1c7feefe {
+    margin-top: 30rpx;
+}
+
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 头条小程序组件内不能引入字体 */
+
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 隔断线颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.scroll-h.data-v-696fbe2a {
+  width: 750rpx;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  padding-top: 20rpx;
+  background-color: #000;
+  color: #fff;
+  white-space: nowrap;
+  /* flex-wrap: nowrap; */
+  /* border-color: #cccccc;
+	border-bottom-style: solid;
+	border-bottom-width: 1px; */
+}
+.line-h.data-v-696fbe2a {
+  height: 1rpx;
+  background-color: #eee;
+}
+.line-h-b.data-v-696fbe2a {
+  height: 20rpx;
+  background-color: #e6ecf1;
+}
+.uni-tab-item.data-v-696fbe2a {
+  display: inline-block;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  padding-left: 34rpx;
+  padding-right: 34rpx;
+  border-bottom: 2px solid #000;
+}
+.uni-tab-item-active.data-v-696fbe2a {
+  border-bottom: 2px solid #1eb2a6;
+}
+.uni-tab-item-title.data-v-696fbe2a {
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.uni-tab-item-title-active.data-v-696fbe2a {
+  color: #1eb2a6;
+}
+.date.data-v-696fbe2a {
+  text-align: center;
+  font-size: 50rpx;
+  line-height: 80rpx;
+}
+.week.data-v-696fbe2a {
+  text-align: center;
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+.week text.data-v-696fbe2a {
+    background-color: #FFFFFF;
+    padding: 0 20rpx;
+}
+.week .line-middle.data-v-696fbe2a {
+    position: relative;
+    top: -20rpx;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 80%;
+    height: 2rpx;
+    background-color: #000000;
+    z-index: -1;
+}
+.news.data-v-696fbe2a {
+  padding: 20rpx;
+}
+.news .user_info.data-v-696fbe2a {
+    line-height: 70rpx;
+}
+.news .user_info .avatar.data-v-696fbe2a {
+      width: 50rpx;
+      height: 50rpx;
+      vertical-align: middle;
+      margin-right: 8rpx;
+}
+.news .user_info text.data-v-696fbe2a {
+      font-size: 28rpx;
+}
+.news .pic image.data-v-696fbe2a {
+    width: 100%;
+}
+.news .title_info.data-v-696fbe2a {
+    margin-bottom: 30rpx;
+}
+.news .title_info .title.data-v-696fbe2a {
+      font-size: 32rpx;
+      line-height: 70rpx;
+}
+.news .title_info .intro.data-v-696fbe2a {
+      font-size: 24rpx;
+      color: #aaa;
+}
+.news .set.data-v-696fbe2a {
+    margin-top: 30rpx;
+}
+
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 头条小程序组件内不能引入字体 */
+
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 隔断线颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.list.data-v-6c2bef15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 20rpx;
+  margin-top: 20rpx;
+  border-radius: 15rpx;
+  font-size: 28rpx;
+}
+.list .pic.data-v-6c2bef15 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+            flex: 1;
+    text-align: center;
+}
+.list .pic image.data-v-6c2bef15 {
+      width: 150rpx;
+      height: 150rpx;
+      vertical-align: middle;
+}
+.list .content.data-v-6c2bef15 {
+    -webkit-box-flex: 2;
+    -webkit-flex: 2;
+            flex: 2;
+    vertical-align: middle;
+    line-height: 60rpx;
+}
+.list .l1.data-v-6c2bef15 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.list .l1 text.data-v-6c2bef15 {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+              flex: 1;
+}
+.list .l1 .name.data-v-6c2bef15 {
+      font-size: 32rpx;
+      color: #555;
+}
+.list .l1 .position.data-v-6c2bef15 {
+      color: #1eb2a6;
+}
+.list .l1 .date.data-v-6c2bef15 {
+      font-size: 28rpx;
+      color: #999;
+      text-align: right;
+}
+.list .l3.data-v-6c2bef15 {
+    line-height: 40rpx;
+    color: #808080;
+}
+
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 头条小程序组件内不能引入字体 */
+
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 隔断线颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.teacher.data-v-3b8cc9c7 {
+  padding: 20rpx;
+}
+.list.data-v-3b8cc9c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 20rpx;
+  margin-top: 50rpx;
+  border-radius: 15rpx;
+  box-shadow: 2px 2px 5px #888;
+}
+.list .pic.data-v-3b8cc9c7 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+            flex: 1;
+}
+.list .pic image.data-v-3b8cc9c7 {
+      width: 150rpx;
+      height: 150rpx;
+      vertical-align: middle;
+}
+.list .content.data-v-3b8cc9c7 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+            flex: 1;
+    vertical-align: middle;
+    line-height: 60rpx;
+    font-size: 28rpx;
+}
+.list .btn.data-v-3b8cc9c7 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+            flex: 1;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 28rpx;
+}
+
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 头条小程序组件内不能引入字体 */
+
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 隔断线颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+@font-face {
+  font-family: 'iconfont';
+  src: url(data:font/ttf;base64,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) format("truetype");
+}
+.icon {
+  font-family: iconfont;
+  margin-right: 50rpx;
+}
+page {
+  width: 100%;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.tabs {
+  position: fixed;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  top: 0px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+.status {
+  background-color: #000;
+}
+.scroll-h {
+  width: 750rpx;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  padding-top: 20rpx;
+  background-color: #000;
+  color: #fff;
+  white-space: nowrap;
+  /* flex-wrap: nowrap; */
+  /* border-color: #cccccc;
+	border-bottom-style: solid;
+	border-bottom-width: 1px; */
+}
+.line-h {
+  height: 1rpx;
+  background-color: #eee;
+}
+.line-h-b {
+  height: 20rpx;
+  background-color: #e6ecf1;
+}
+.uni-tab-item {
+  display: inline-block;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  padding-left: 34rpx;
+  padding-right: 34rpx;
+  border-bottom: 2px solid #000;
+}
+.uni-tab-item-active {
+  border-bottom: 2px solid #1eb2a6;
+}
+.uni-tab-item-title {
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.uni-tab-item-title-active {
+  color: #1eb2a6;
+}
+.date {
+  text-align: center;
+  font-size: 50rpx;
+  line-height: 80rpx;
+}
+.week {
+  text-align: center;
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+.week text {
+    background-color: #FFFFFF;
+    padding: 0 20rpx;
+}
+.week .line-middle {
+    position: relative;
+    top: -20rpx;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 80%;
+    height: 2rpx;
+    background-color: #000000;
+    z-index: -1;
+}
+.news {
+  padding: 20rpx;
+}
+.news .user_info {
+    line-height: 70rpx;
+}
+.news .user_info .avatar {
+      width: 50rpx;
+      height: 50rpx;
+      vertical-align: middle;
+      margin-right: 8rpx;
+}
+.news .user_info text {
+      font-size: 28rpx;
+}
+.news .pic image {
+    width: 100%;
+}
+.news .title_info {
+    margin-bottom: 30rpx;
+}
+.news .title_info .title {
+      font-size: 32rpx;
+      line-height: 70rpx;
+}
+.news .title_info .intro {
+      font-size: 24rpx;
+      color: #aaa;
+}
+.news .set {
+    margin-top: 30rpx;
+}
+

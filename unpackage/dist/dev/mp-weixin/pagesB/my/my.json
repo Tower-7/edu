@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "tt-nav-bar": "/components/tt-nav-bar/tt-nav-bar",
+    "student": "/components/student/student"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "tt-image": "/components/tt-image/tt-image",
+    "tt-status-bar": "/components/tt-status-bar/tt-status-bar"
+  }
+}

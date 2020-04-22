@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "tt-status-bar": "/components/tt-status-bar/tt-status-bar",
+    "class": "/components/class/class",
+    "hot": "/components/hot/hot",
+    "teacher": "/components/teacher/teacher",
+    "student": "/components/student/student"
+  }
+}

@@ -106,6 +106,7 @@
 	import ttPicker from '@/components/tt-picker/tt-picker.vue'
 	import ttLabels from '@/components/tt-labels/tt-labels.vue'
 	import Photo from '../../components/photo/photo.vue'
+	const qiniuUploader = require("../../components/qiniuUploader/qiniuUploader");
 	export default {
 		components:{ttNavBar,ttPicker,ttLabels,Photo},
 		data() {
@@ -120,6 +121,8 @@
 				addr:'',
 				info: info,
 				texarea: true,
+				key:[],
+				token: [],
 			}
 		},
 		created(){
@@ -150,25 +153,47 @@
 				this.texarea = data
 			},
 			getPhoto(data){
+				this.info.photo = data
+				console.log(data[data.length-1])
+				
 				let _this = this
 				let url
 				// #ifdef H5
-				url = `/api/upload`
+				url = `/api/qiniu/config`
 				// #endif
 				// #ifndef H5
-				url = `${this.GLOBAL.baseURL}/upload`
+				url = `${this.GLOBAL.baseURL}/qiniu/config`
 				// #endif
-				for(let i=0; i<data.length;i++){
-					uni.uploadFile({
-						url: url,
-						filePath: data[i],
-						name: 'file',
-						formData: {},
-						success: (res) => {
-							_this.info.photo.push(res.data)
-						}
-					});
-				}
+				
+				// data.forEach(e=>{
+				// 	uni.request({
+				// 		url: url,
+				// 		type: 'GET',
+				// 		success:(res)=> {
+				// 			console.log(res)
+				// 		}
+				// 	})
+				// })
+				uni.request({
+					url: url,
+					type: 'GET',
+					success:(res)=> {
+						console.log(res.data)
+						qiniuUploader.upload(data[data.length-1], (res) => {
+							console.log(res.imageURL);
+						}, (error) => {
+							var a = JSON.stringify(error);
+							console.log('error: ' + a);
+						},
+						{
+							region: 'ECN',
+							domain: 'http://qiniu.ishuber.com', // bucket 域名，下载资源时用到。如果设置，会在 success callback 的 res 参数加上可以直接使用的 ImageURL 字段。否则需要自己拼接
+							// key: res.data.key, 
+							uptoken: res.data.uploadToken,
+						},
+						);
+					}
+				})
 				
 			},
 			submit(){

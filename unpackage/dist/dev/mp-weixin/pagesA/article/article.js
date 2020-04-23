@@ -95,10 +95,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   "uni-nav-bar": function() {
-    return __webpack_require__.e(/*! import() | components/uni-nav-bar/uni-nav-bar */ "components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-nav-bar/uni-nav-bar.vue */ 160))
+    return __webpack_require__.e(/*! import() | components/uni-nav-bar/uni-nav-bar */ "components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-nav-bar/uni-nav-bar.vue */ 161))
   },
   "tt-image": function() {
-    return Promise.all(/*! import() | components/tt-image/tt-image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tt-image/tt-image")]).then(__webpack_require__.bind(null, /*! @/components/tt-image/tt-image.vue */ 167))
+    return Promise.all(/*! import() | components/tt-image/tt-image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tt-image/tt-image")]).then(__webpack_require__.bind(null, /*! @/components/tt-image/tt-image.vue */ 168))
   }
 }
 var render = function() {
@@ -138,7 +138,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var ttStatusBar = function ttStatusBar() {__webpack_require__.e(/*! require.ensure | components/tt-status-bar/tt-status-bar */ "components/tt-status-bar/tt-status-bar").then((function () {return resolve(__webpack_require__(/*! ../../components/tt-status-bar/tt-status-bar.vue */ 153));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-nav-bar/uni-nav-bar */ "components/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-nav-bar/uni-nav-bar.vue */ 160));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var ttImage = function ttImage() {Promise.all(/*! require.ensure | components/tt-image/tt-image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tt-image/tt-image")]).then((function () {return resolve(__webpack_require__(/*! @/components/tt-image/tt-image.vue */ 167));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var ttStatusBar = function ttStatusBar() {__webpack_require__.e(/*! require.ensure | components/tt-status-bar/tt-status-bar */ "components/tt-status-bar/tt-status-bar").then((function () {return resolve(__webpack_require__(/*! ../../components/tt-status-bar/tt-status-bar.vue */ 154));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-nav-bar/uni-nav-bar */ "components/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-nav-bar/uni-nav-bar.vue */ 161));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var ttImage = function ttImage() {Promise.all(/*! require.ensure | components/tt-image/tt-image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tt-image/tt-image")]).then((function () {return resolve(__webpack_require__(/*! @/components/tt-image/tt-image.vue */ 168));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

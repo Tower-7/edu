@@ -75,7 +75,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   "tt-status-bar": function() {
-    return __webpack_require__.e(/*! import() | components/tt-status-bar/tt-status-bar */ "components/tt-status-bar/tt-status-bar").then(__webpack_require__.bind(null, /*! @/components/tt-status-bar/tt-status-bar.vue */ 153))
+    return __webpack_require__.e(/*! import() | components/tt-status-bar/tt-status-bar */ "components/tt-status-bar/tt-status-bar").then(__webpack_require__.bind(null, /*! @/components/tt-status-bar/tt-status-bar.vue */ 154))
   }
 }
 var render = function() {
@@ -157,7 +157,7 @@ __webpack_require__.r(__webpack_exports__);
 var _class = _interopRequireDefault(__webpack_require__(/*! ../class/class.vue */ 41));
 var _hot = _interopRequireDefault(__webpack_require__(/*! ../hot/hot.vue */ 48));
 var _teacher = _interopRequireDefault(__webpack_require__(/*! ../teacher/teacher.vue */ 55));
-var _student = _interopRequireDefault(__webpack_require__(/*! ../student/student.vue */ 62));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var ttStatusBar = function ttStatusBar() {__webpack_require__.e(/*! require.ensure | components/tt-status-bar/tt-status-bar */ "components/tt-status-bar/tt-status-bar").then((function () {return resolve(__webpack_require__(/*! ../../components/tt-status-bar/tt-status-bar */ 153));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _student = _interopRequireDefault(__webpack_require__(/*! ../student/student.vue */ 62));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var ttStatusBar = function ttStatusBar() {__webpack_require__.e(/*! require.ensure | components/tt-status-bar/tt-status-bar */ "components/tt-status-bar/tt-status-bar").then((function () {return resolve(__webpack_require__(/*! ../../components/tt-status-bar/tt-status-bar */ 154));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   components: {
     ttStatusBar: ttStatusBar,

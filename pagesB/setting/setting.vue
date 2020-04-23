@@ -106,6 +106,7 @@
 	import ttPicker from '@/components/tt-picker/tt-picker.vue'
 	import ttLabels from '@/components/tt-labels/tt-labels.vue'
 	import Photo from '../../components/photo/photo.vue'
+	const qiniuUploader = require("../../components/qiniuUploader");
 	export default {
 		components:{ttNavBar,ttPicker,ttLabels,Photo},
 		data() {
@@ -150,26 +151,47 @@
 				this.texarea = data
 			},
 			getPhoto(data){
+				// this.info.photo = data
+				console.log(data)
 				let _this = this
 				let url
 				// #ifdef H5
-				url = `/api/qiniu`
+				url = `/api/qiniu/config`
 				// #endif
 				// #ifndef H5
-				url = `${this.GLOBAL.baseURL}/qiniu`
+				url = `${this.GLOBAL.baseURL}/qiniu/config`
 				// #endif
-				let formData = new FormData();
 				data.forEach(e=>{
-					formData.append('file',e);
 					uni.request({
 						url: url,
-						type: 'POST',
-						data: formData,
-						success: (res) => {
-							_this.info.photo.push(res.data)
+						type: 'GET',
+						success:(res)=> {
+							_this.uploadQiniu(e,res.data.uploadToken)
 						}
-					});
+					})
 				})
+			},
+			uploadQiniu(imgPath,token) {
+				let _this = this
+			    wx.uploadFile({
+			      url: 'https://upload.qiniup.com',
+			      name: 'file',
+			      filePath: imgPath,
+			      header: {
+			        "Content-Type": "multipart/form-data"
+			      },
+			     formData: {
+			       token: token,
+			     },
+			     success: function(res) {
+					 let data = JSON.parse(res.data)
+					 let url = `https://qiniu.ishuber.com/${data.key}`
+					_this.info.photo.push(url)
+			     },
+			     fail: function(res) {
+			       console.log(res)
+			     }
+			   });
 			},
 			submit(){
 				this.info.course = this.$store.state.user.userInfo.course

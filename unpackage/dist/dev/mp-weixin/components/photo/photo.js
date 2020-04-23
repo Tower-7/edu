@@ -197,9 +197,9 @@ var sizeType = [
                   sizeType: sizeType[this.sizeTypeIndex],
                   count: this.imageList.length + this.count[this.countIndex] > 9 ? 9 - this.imageList.length : this.count[this.countIndex],
                   success: function success(res) {
-                    console.log(res);
+                    // console.log(res)
                     _this.imageList = _this.imageList.concat(res.tempFilePaths);
-                    _this.$emit('getPhoto', _this.imageList);
+                    _this.$emit('getPhoto', res.tempFilePaths);
                   },
                   fail: function fail(err) {
 
@@ -321,7 +321,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 124:
+/***/ 125:
 /*!*******************************************************************!*\
   !*** E:/Dcloud/EDU/main.js?{"page":"components%2Fphoto%2Fphoto"} ***!
   \*******************************************************************/
@@ -338,5 +338,5 @@ createPage(_photo.default);
 
 /***/ })
 
-},[[124,"common/runtime","common/vendor"]]]);
+},[[125,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/components/photo/photo.js.map

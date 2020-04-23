@@ -14,6 +14,13 @@
 /* 颜色变量 */
 /* 头条小程序组件内不能引入字体 */
 
+
+
+
+
+
+
+
 /* 行为相关颜色 */
 /* 文字基本颜色 */
 /* 背景颜色 */
@@ -83,50 +90,50 @@
   margin-bottom: 10rpx;
 }
 .week text.data-v-696fbe2a {
-    background-color: #FFFFFF;
-    padding: 0 20rpx;
+  background-color: #FFFFFF;
+  padding: 0 20rpx;
 }
 .week .line-middle.data-v-696fbe2a {
-    position: relative;
-    top: -20rpx;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    width: 80%;
-    height: 2rpx;
-    background-color: #000000;
-    z-index: -1;
+  position: relative;
+  top: -20rpx;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 80%;
+  height: 2rpx;
+  background-color: #000000;
+  z-index: -1;
 }
 .news.data-v-696fbe2a {
   padding: 20rpx;
 }
 .news .user_info.data-v-696fbe2a {
-    line-height: 70rpx;
+  line-height: 70rpx;
 }
 .news .user_info .avatar.data-v-696fbe2a {
-      width: 50rpx;
-      height: 50rpx;
-      vertical-align: middle;
-      margin-right: 8rpx;
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+  margin-right: 8rpx;
 }
 .news .user_info text.data-v-696fbe2a {
-      font-size: 28rpx;
+  font-size: 28rpx;
 }
 .news .pic image.data-v-696fbe2a {
-    width: 100%;
+  width: 100%;
 }
 .news .title_info.data-v-696fbe2a {
-    margin-bottom: 30rpx;
+  margin-bottom: 30rpx;
 }
 .news .title_info .title.data-v-696fbe2a {
-      font-size: 32rpx;
-      line-height: 70rpx;
+  font-size: 32rpx;
+  line-height: 70rpx;
 }
 .news .title_info .intro.data-v-696fbe2a {
-      font-size: 24rpx;
-      color: #aaa;
+  font-size: 24rpx;
+  color: #aaa;
 }
 .news .set.data-v-696fbe2a {
-    margin-top: 30rpx;
+  margin-top: 30rpx;
 }
 

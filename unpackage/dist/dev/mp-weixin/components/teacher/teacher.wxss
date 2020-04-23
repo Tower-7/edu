@@ -14,6 +14,13 @@
 /* 颜色变量 */
 /* 头条小程序组件内不能引入字体 */
 
+
+
+
+
+
+
+
 /* 行为相关颜色 */
 /* 文字基本颜色 */
 /* 背景颜色 */
@@ -37,47 +44,47 @@
   font-size: 28rpx;
 }
 .list .pic.data-v-6c2bef15 {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-            flex: 1;
-    text-align: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  text-align: center;
 }
 .list .pic image.data-v-6c2bef15 {
-      width: 150rpx;
-      height: 150rpx;
-      vertical-align: middle;
+  width: 150rpx;
+  height: 150rpx;
+  vertical-align: middle;
 }
 .list .content.data-v-6c2bef15 {
-    -webkit-box-flex: 2;
-    -webkit-flex: 2;
-            flex: 2;
-    vertical-align: middle;
-    line-height: 60rpx;
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+  vertical-align: middle;
+  line-height: 60rpx;
 }
 .list .l1.data-v-6c2bef15 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
 }
 .list .l1 text.data-v-6c2bef15 {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1;
-              flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
 }
 .list .l1 .name.data-v-6c2bef15 {
-      font-size: 32rpx;
-      color: #555;
+  font-size: 32rpx;
+  color: #555;
 }
 .list .l1 .position.data-v-6c2bef15 {
-      color: #1eb2a6;
+  color: #1eb2a6;
 }
 .list .l1 .date.data-v-6c2bef15 {
-      font-size: 28rpx;
-      color: #999;
-      text-align: right;
+  font-size: 28rpx;
+  color: #999;
+  text-align: right;
 }
 .list .l3.data-v-6c2bef15 {
-    line-height: 40rpx;
-    color: #808080;
+  line-height: 40rpx;
+  color: #808080;
 }
 

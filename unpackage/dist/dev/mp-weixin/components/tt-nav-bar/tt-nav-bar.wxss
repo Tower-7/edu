@@ -14,6 +14,13 @@
 /* 颜色变量 */
 /* 头条小程序组件内不能引入字体 */
 
+
+
+
+
+
+
+
 /* 行为相关颜色 */
 /* 文字基本颜色 */
 /* 背景颜色 */
@@ -50,21 +57,21 @@
   z-index: 10;
 }
 .tt-nav-content view.data-v-7c76414f {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-            flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
 }
 .tt-nav-content .tt-nav-left.data-v-7c76414f {
-    margin-left: 30rpx;
+  margin-left: 30rpx;
 }
 .tt-nav-content .tt-nav-title.data-v-7c76414f {
-    text-align: center;
+  text-align: center;
 }
 .tt-nav-content .tt-nav-right.data-v-7c76414f {
-    text-align: right;
+  text-align: right;
 }
 .tt-nav-content .tt-nav-right .tt-right-text.data-v-7c76414f {
-      margin-right: 30rpx;
-      color: #1eb2a6;
+  margin-right: 30rpx;
+  color: #1eb2a6;
 }
 

@@ -14,6 +14,13 @@
 /* 颜色变量 */
 /* 头条小程序组件内不能引入字体 */
 
+
+
+
+
+
+
+
 /* 行为相关颜色 */
 /* 文字基本颜色 */
 /* 背景颜色 */
@@ -177,6 +184,13 @@
 /* 颜色变量 */
 /* 头条小程序组件内不能引入字体 */
 
+
+
+
+
+
+
+
 /* 行为相关颜色 */
 /* 文字基本颜色 */
 /* 背景颜色 */
@@ -213,25 +227,25 @@
   color: grey;
 }
 .content .list.data-v-0f3b6259 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
 }
 .content .list .t1.data-v-0f3b6259 {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1;
-              flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
 }
 .content .list .t2.data-v-0f3b6259 {
-      -webkit-box-flex: 3;
-      -webkit-flex: 3;
-              flex: 3;
-      min-height: 80rpx;
-      line-height: 80rpx;
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+          flex: 3;
+  min-height: 80rpx;
+  line-height: 80rpx;
 }
 .content textarea.data-v-0f3b6259 {
-    padding: 20rpx;
-    font-size: 32rpx;
+  padding: 20rpx;
+  font-size: 32rpx;
 }
 .footer.data-v-0f3b6259 {
   width: 100%;

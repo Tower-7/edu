@@ -14,6 +14,13 @@
 /* 颜色变量 */
 /* 头条小程序组件内不能引入字体 */
 
+
+
+
+
+
+
+
 /* 行为相关颜色 */
 /* 文字基本颜色 */
 /* 背景颜色 */
@@ -162,46 +169,46 @@
   background-size: cover;
 }
 .base_info .bg.data-v-18adb41b {
-    width: 100%;
+  width: 100%;
 }
 .base_info .content.data-v-18adb41b {
-    padding-top: 200rpx;
-    padding-bottom: 40rpx;
+  padding-top: 200rpx;
+  padding-bottom: 40rpx;
 }
 .base_info .pic.data-v-18adb41b {
-    margin-top: 40rpx;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
+  margin-top: 40rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
 }
 .base_info .pic .avatar.data-v-18adb41b {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1;
-              flex: 1;
-      text-align: left;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  text-align: left;
 }
 .base_info .pic .avatar image.data-v-18adb41b {
-        width: 160rpx;
-        border: 2px solid #fff;
+  width: 160rpx;
+  border: 2px solid #fff;
 }
 .base_info .pic .icons.data-v-18adb41b {
-      -webkit-box-flex: 3;
-      -webkit-flex: 3;
-              flex: 3;
-      text-align: right;
-      -webkit-box-pack: end;
-      -webkit-justify-content: flex-end;
-              justify-content: flex-end;
-      -webkit-box-align: end;
-      -webkit-align-items: flex-end;
-              align-items: flex-end;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
-              flex-direction: row;
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+          flex: 3;
+  text-align: right;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+          align-items: flex-end;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
 }
 .signature.data-v-18adb41b {
   padding: 40rpx;
@@ -216,7 +223,7 @@
   background-color: #f7f9fb;
 }
 .credentials .title text.data-v-18adb41b {
-    padding-bottom: 10rpx;
+  padding-bottom: 10rpx;
 }
 .credentials .content.data-v-18adb41b {
   padding: 0 40rpx;
@@ -227,22 +234,22 @@
   background-color: #FFFFFF;
 }
 .credentials .content .list.data-v-18adb41b {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
 }
 .credentials .content .list .t1.data-v-18adb41b {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1;
-              flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
 }
 .credentials .content .list .t2.data-v-18adb41b {
-      -webkit-box-flex: 3;
-      -webkit-flex: 3;
-              flex: 3;
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+          flex: 3;
 }
 .credentials .content .intro.data-v-18adb41b {
-    line-height: 40rpx;
+  line-height: 40rpx;
 }
 .footer.data-v-18adb41b {
   width: 100%;

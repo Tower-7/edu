@@ -14,6 +14,13 @@
 /* 颜色变量 */
 /* 头条小程序组件内不能引入字体 */
 
+
+
+
+
+
+
+
 /* 行为相关颜色 */
 /* 文字基本颜色 */
 /* 背景颜色 */
@@ -49,45 +56,45 @@
   transition: height 0.2s;
 }
 .checkBox .submit.data-v-04da582e {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    padding: 0 40rpx;
-    color: #1eb2a6;
-    background-color: #e6ecf1;
-    border-bottom: 1px solid #eee;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 40rpx;
+  color: #1eb2a6;
+  background-color: #e6ecf1;
+  border-bottom: 1px solid #eee;
 }
 .checkBox .submit .title.data-v-04da582e {
-      -webkit-box-flex: 3;
-      -webkit-flex: 3;
-              flex: 3;
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+          flex: 3;
 }
 .checkBox .submit .check.data-v-04da582e {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1;
-              flex: 1;
-      text-align: right;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  text-align: right;
 }
 .checkBox .content.data-v-04da582e {
-    overflow: scroll;
-    height: 50vh;
+  overflow: scroll;
+  height: 50vh;
 }
 .checkBox .content .uni-list-cell.data-v-04da582e {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: flex;
-      padding: 0 40rpx;
-      border-bottom: 1px solid #eee;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 40rpx;
+  border-bottom: 1px solid #eee;
 }
 .checkBox .content .uni-list-cell .title.data-v-04da582e {
-        -webkit-box-flex: 3;
-        -webkit-flex: 3;
-                flex: 3;
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+          flex: 3;
 }
 .checkBox .content .uni-list-cell .check.data-v-04da582e {
-        -webkit-box-flex: 1;
-        -webkit-flex: 1;
-                flex: 1;
-        text-align: right;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  text-align: right;
 }
 

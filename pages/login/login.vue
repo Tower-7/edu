@@ -18,11 +18,14 @@
 			return {
 				rawData: '',
 				origin_url: '',
+				origin_id: '',
 				userInfo: ''
 			}
 		},
 		onLoad: function (option) {
+			console.log(option)
 			this.origin_url = option.url
+			this.origin_id = option.urlId
 		},
 		methods: {
 			bindGetUserInfo(e) {
@@ -51,9 +54,16 @@
 								})
 							})
 							.then((res)=>{
-								uni.switchTab({
-									url: _this.origin_url
-								})
+								if(_this.origin_id === '0'){
+									uni.navigateTo({
+										url: _this.origin_url
+									})
+								}
+								else{
+									uni.switchTab({
+										url: _this.origin_url
+									})
+								}
 							})
 					    } else {
 					      console.log('登录失败！' + res.errMsg)

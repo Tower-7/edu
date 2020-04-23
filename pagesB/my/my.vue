@@ -71,7 +71,8 @@
 				statusBarHeight: statusBarHeight,
 				backgroundColor: 'transparent',
 				openid: '',
-				url: '../../pagesB/my/my'
+				url: '../../pagesB/my/my',
+				urlId: '1'
 			}
 		},
 		computed: {
@@ -81,7 +82,7 @@
 		},
 		onShow(){
 			// #ifdef MP-WEIXIN
-			this.$loginStatus.login(this,this.url)
+			this.$loginStatus.login(this)
 			// #endif
 		},
 		created() {

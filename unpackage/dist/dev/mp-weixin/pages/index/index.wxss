@@ -14,6 +14,13 @@
 /* 颜色变量 */
 /* 头条小程序组件内不能引入字体 */
 
+
+
+
+
+
+
+
 /* 行为相关颜色 */
 /* 文字基本颜色 */
 /* 背景颜色 */
@@ -83,51 +90,51 @@
   margin-bottom: 10rpx;
 }
 .week text.data-v-1c7feefe {
-    background-color: #FFFFFF;
-    padding: 0 20rpx;
+  background-color: #FFFFFF;
+  padding: 0 20rpx;
 }
 .week .line-middle.data-v-1c7feefe {
-    position: relative;
-    top: -20rpx;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    width: 80%;
-    height: 2rpx;
-    background-color: #000000;
-    z-index: -1;
+  position: relative;
+  top: -20rpx;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 80%;
+  height: 2rpx;
+  background-color: #000000;
+  z-index: -1;
 }
 .news.data-v-1c7feefe {
   padding: 20rpx;
 }
 .news .user_info.data-v-1c7feefe {
-    line-height: 70rpx;
+  line-height: 70rpx;
 }
 .news .user_info .avatar.data-v-1c7feefe {
-      width: 50rpx;
-      height: 50rpx;
-      vertical-align: middle;
-      margin-right: 8rpx;
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+  margin-right: 8rpx;
 }
 .news .user_info text.data-v-1c7feefe {
-      font-size: 28rpx;
+  font-size: 28rpx;
 }
 .news .pic image.data-v-1c7feefe {
-    width: 100%;
+  width: 100%;
 }
 .news .title_info.data-v-1c7feefe {
-    margin-bottom: 30rpx;
+  margin-bottom: 30rpx;
 }
 .news .title_info .title.data-v-1c7feefe {
-      font-size: 32rpx;
-      line-height: 70rpx;
+  font-size: 32rpx;
+  line-height: 70rpx;
 }
 .news .title_info .intro.data-v-1c7feefe {
-      font-size: 24rpx;
-      color: #aaa;
+  font-size: 24rpx;
+  color: #aaa;
 }
 .news .set.data-v-1c7feefe {
-    margin-top: 30rpx;
+  margin-top: 30rpx;
 }
 
 @charset "UTF-8";
@@ -145,6 +152,13 @@
  */
 /* 颜色变量 */
 /* 头条小程序组件内不能引入字体 */
+
+
+
+
+
+
+
 
 /* 行为相关颜色 */
 /* 文字基本颜色 */
@@ -215,51 +229,51 @@
   margin-bottom: 10rpx;
 }
 .week text.data-v-696fbe2a {
-    background-color: #FFFFFF;
-    padding: 0 20rpx;
+  background-color: #FFFFFF;
+  padding: 0 20rpx;
 }
 .week .line-middle.data-v-696fbe2a {
-    position: relative;
-    top: -20rpx;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    width: 80%;
-    height: 2rpx;
-    background-color: #000000;
-    z-index: -1;
+  position: relative;
+  top: -20rpx;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 80%;
+  height: 2rpx;
+  background-color: #000000;
+  z-index: -1;
 }
 .news.data-v-696fbe2a {
   padding: 20rpx;
 }
 .news .user_info.data-v-696fbe2a {
-    line-height: 70rpx;
+  line-height: 70rpx;
 }
 .news .user_info .avatar.data-v-696fbe2a {
-      width: 50rpx;
-      height: 50rpx;
-      vertical-align: middle;
-      margin-right: 8rpx;
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+  margin-right: 8rpx;
 }
 .news .user_info text.data-v-696fbe2a {
-      font-size: 28rpx;
+  font-size: 28rpx;
 }
 .news .pic image.data-v-696fbe2a {
-    width: 100%;
+  width: 100%;
 }
 .news .title_info.data-v-696fbe2a {
-    margin-bottom: 30rpx;
+  margin-bottom: 30rpx;
 }
 .news .title_info .title.data-v-696fbe2a {
-      font-size: 32rpx;
-      line-height: 70rpx;
+  font-size: 32rpx;
+  line-height: 70rpx;
 }
 .news .title_info .intro.data-v-696fbe2a {
-      font-size: 24rpx;
-      color: #aaa;
+  font-size: 24rpx;
+  color: #aaa;
 }
 .news .set.data-v-696fbe2a {
-    margin-top: 30rpx;
+  margin-top: 30rpx;
 }
 
 @charset "UTF-8";
@@ -277,6 +291,13 @@
  */
 /* 颜色变量 */
 /* 头条小程序组件内不能引入字体 */
+
+
+
+
+
+
+
 
 /* 行为相关颜色 */
 /* 文字基本颜色 */
@@ -301,48 +322,48 @@
   font-size: 28rpx;
 }
 .list .pic.data-v-6c2bef15 {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-            flex: 1;
-    text-align: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  text-align: center;
 }
 .list .pic image.data-v-6c2bef15 {
-      width: 150rpx;
-      height: 150rpx;
-      vertical-align: middle;
+  width: 150rpx;
+  height: 150rpx;
+  vertical-align: middle;
 }
 .list .content.data-v-6c2bef15 {
-    -webkit-box-flex: 2;
-    -webkit-flex: 2;
-            flex: 2;
-    vertical-align: middle;
-    line-height: 60rpx;
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+  vertical-align: middle;
+  line-height: 60rpx;
 }
 .list .l1.data-v-6c2bef15 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
 }
 .list .l1 text.data-v-6c2bef15 {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1;
-              flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
 }
 .list .l1 .name.data-v-6c2bef15 {
-      font-size: 32rpx;
-      color: #555;
+  font-size: 32rpx;
+  color: #555;
 }
 .list .l1 .position.data-v-6c2bef15 {
-      color: #1eb2a6;
+  color: #1eb2a6;
 }
 .list .l1 .date.data-v-6c2bef15 {
-      font-size: 28rpx;
-      color: #999;
-      text-align: right;
+  font-size: 28rpx;
+  color: #999;
+  text-align: right;
 }
 .list .l3.data-v-6c2bef15 {
-    line-height: 40rpx;
-    color: #808080;
+  line-height: 40rpx;
+  color: #808080;
 }
 
 @charset "UTF-8";
@@ -360,6 +381,13 @@
  */
 /* 颜色变量 */
 /* 头条小程序组件内不能引入字体 */
+
+
+
+
+
+
+
 
 /* 行为相关颜色 */
 /* 文字基本颜色 */
@@ -384,33 +412,34 @@
   padding: 20rpx;
   margin-top: 50rpx;
   border-radius: 15rpx;
-  box-shadow: 2px 2px 5px #888;
+  -webkit-box-shadow: 2px 2px 5px #888;
+          box-shadow: 2px 2px 5px #888;
 }
 .list .pic.data-v-3b8cc9c7 {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-            flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
 }
 .list .pic image.data-v-3b8cc9c7 {
-      width: 150rpx;
-      height: 150rpx;
-      vertical-align: middle;
+  width: 150rpx;
+  height: 150rpx;
+  vertical-align: middle;
 }
 .list .content.data-v-3b8cc9c7 {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-            flex: 1;
-    vertical-align: middle;
-    line-height: 60rpx;
-    font-size: 28rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  vertical-align: middle;
+  line-height: 60rpx;
+  font-size: 28rpx;
 }
 .list .btn.data-v-3b8cc9c7 {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-            flex: 1;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 28rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 28rpx;
 }
 
 @charset "UTF-8";
@@ -428,6 +457,13 @@
  */
 /* 颜色变量 */
 /* 头条小程序组件内不能引入字体 */
+
+
+
+
+
+
+
 
 /* 行为相关颜色 */
 /* 文字基本颜色 */
@@ -528,50 +564,50 @@ page {
   margin-bottom: 10rpx;
 }
 .week text {
-    background-color: #FFFFFF;
-    padding: 0 20rpx;
+  background-color: #FFFFFF;
+  padding: 0 20rpx;
 }
 .week .line-middle {
-    position: relative;
-    top: -20rpx;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    width: 80%;
-    height: 2rpx;
-    background-color: #000000;
-    z-index: -1;
+  position: relative;
+  top: -20rpx;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 80%;
+  height: 2rpx;
+  background-color: #000000;
+  z-index: -1;
 }
 .news {
   padding: 20rpx;
 }
 .news .user_info {
-    line-height: 70rpx;
+  line-height: 70rpx;
 }
 .news .user_info .avatar {
-      width: 50rpx;
-      height: 50rpx;
-      vertical-align: middle;
-      margin-right: 8rpx;
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+  margin-right: 8rpx;
 }
 .news .user_info text {
-      font-size: 28rpx;
+  font-size: 28rpx;
 }
 .news .pic image {
-    width: 100%;
+  width: 100%;
 }
 .news .title_info {
-    margin-bottom: 30rpx;
+  margin-bottom: 30rpx;
 }
 .news .title_info .title {
-      font-size: 32rpx;
-      line-height: 70rpx;
+  font-size: 32rpx;
+  line-height: 70rpx;
 }
 .news .title_info .intro {
-      font-size: 24rpx;
-      color: #aaa;
+  font-size: 24rpx;
+  color: #aaa;
 }
 .news .set {
-    margin-top: 30rpx;
+  margin-top: 30rpx;
 }
 

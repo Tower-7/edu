@@ -14,6 +14,13 @@
 /* 颜色变量 */
 /* 头条小程序组件内不能引入字体 */
 
+
+
+
+
+
+
+
 /* 行为相关颜色 */
 /* 文字基本颜色 */
 /* 背景颜色 */
@@ -34,13 +41,13 @@
   width: 100vw;
 }
 .picker .uni-title.data-v-39b19f47 {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-            flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
 }
 .picker .uni-list.data-v-39b19f47 {
-    -webkit-box-flex: 3;
-    -webkit-flex: 3;
-            flex: 3;
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+          flex: 3;
 }
 

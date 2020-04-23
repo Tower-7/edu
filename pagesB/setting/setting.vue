@@ -167,50 +167,14 @@
 			},
 			getPhoto(data){
 				let _this = this
-				let url
-				// #ifdef H5
-				url = `/api/qiniu/config`
-				// #endif
-				// #ifndef H5
-				url = `${this.GLOBAL.baseURL}/qiniu/config`
-				// #endif
 				data.forEach(e=>{
-					uni.request({
-						url: url,
-						type: 'GET',
-						success:(res)=> {
-							_this.uploadQiniu(e,res.data.uploadToken)
-						}
+					_this.$store.dispatch('getQiniuToken',e)
+					.then((res)=>{
+						let data = JSON.parse(res.data)
+						let url = `https://qiniu.ishuber.com/${data.key}`
+						_this.info.photo.push(url)
 					})
 				})
-			},
-			uploadQiniu(imgPath,token) {
-				let _this = this
-			    wx.uploadFile({
-			      url: 'https://up.qiniup.com',
-			      name: 'file',
-			      filePath: imgPath,
-			      header: {
-			        "Content-Type": "multipart/form-data"
-			      },
-			     formData: {
-			       token: token,
-			     },
-			     success: function(res) {
-					 let data = JSON.parse(res.data)
-					 let url = `https://qiniu.ishuber.com/${data.key}`
-					_this.info.photo.push(url)
-			     },
-			     fail: function(res) {
-				   let err = JSON.stringify(res)
-				   uni.showToast({
-				    title: err,
-				   	icon: 'none',
-				   	position: 'top',
-				       duration: 5000
-				   })
-			     }
-			   });
 			},
 			submit(){
 				this.info.course = this.$store.state.user.userInfo.course

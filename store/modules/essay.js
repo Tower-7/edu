@@ -1,4 +1,5 @@
 import { ESSAY_LIST } from '../mutation-types.js'
+import { apiEssay } from '../../config'
 
 const state = {
    list:[]
@@ -9,23 +10,12 @@ const mutations = {
 	}
 }
 const actions = {
-	getEssayList({commit},payload){
-		console.log(payload)
+	getEssayList({commit},o){
 		return new Promise((resolve,reject)=>{
-			uni.request({
-			    url: payload.url,
-				method: 'POST',
-			    data: payload.data,
-			    success: (res) => {
-					console.log(res)
-					commit(ESSAY_LIST,res)
-					resolve(res)
-			    },
-				fail(err) {
-					console.log(err)
-				}
-				
-			});
+			apiEssay.getList(o).then((res)=>{
+				commit(ESSAY_LIST,res)
+				resolve(res)
+			})
 		})
 	}
 }

@@ -68,24 +68,12 @@
 				this.$refs.addImage.chooseImage()
 			},
 			getImgList(data){
-				this.image = data[0]
-				let url
-				// #ifdef H5
-				url = `/api/upload`
-				// #endif
-				// #ifndef H5
-				url = `${this.GLOBAL.baseURL}/upload`
-				// #endif
-				uni.uploadFile({
-					url: url,
-					filePath: data[0],
-					name: 'file',
-					formData: {},
-					success: (res) => {
-						this.uploadFile = res.data
-					}
-				});
-				
+				let _this = this
+				_this.$store.dispatch('getQiniuToken',data[0])
+				.then((res)=>{
+					let data = JSON.parse(res.data)
+					_this.image = _this.uploadFile = `https://qiniu.ishuber.com/${data.key}`
+				})
 			},
 			submit(){
 				let id = this.id

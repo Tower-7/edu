@@ -757,7 +757,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -1555,9 +1555,9 @@ uni$1;exports.default = _default;
 
 /***/ }),
 
-/***/ 110:
+/***/ 111:
 /*!******************************************!*\
-  !*** G:/Dcloud/EDU/common/permission.js ***!
+  !*** E:/Dcloud/EDU/common/permission.js ***!
   \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -1942,7 +1942,7 @@ function normalizeComponent (
 
 /***/ 15:
 /*!************************************!*\
-  !*** G:/Dcloud/EDU/store/index.js ***!
+  !*** E:/Dcloud/EDU/store/index.js ***!
   \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -1953,7 +1953,7 @@ var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 16));
 
 var _essay = _interopRequireDefault(__webpack_require__(/*! ./modules/essay */ 17));
 var _user = _interopRequireDefault(__webpack_require__(/*! ./modules/user */ 19));
-var _common = _interopRequireDefault(__webpack_require__(/*! ./modules/common */ 221));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _common = _interopRequireDefault(__webpack_require__(/*! ./modules/common */ 24));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 _vue.default.use(_vuex.default);
 var state = {
@@ -2925,7 +2925,7 @@ var index_esm = {
 
 /***/ 17:
 /*!********************************************!*\
-  !*** G:/Dcloud/EDU/store/modules/essay.js ***!
+  !*** E:/Dcloud/EDU/store/modules/essay.js ***!
   \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -2973,7 +2973,7 @@ var actions = {
 
 /***/ 18:
 /*!*********************************************!*\
-  !*** G:/Dcloud/EDU/store/mutation-types.js ***!
+  !*** E:/Dcloud/EDU/store/mutation-types.js ***!
   \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -2991,9 +2991,9 @@ var COMMON_LOCATION = 'commonLocation';exports.COMMON_LOCATION = COMMON_LOCATION
 
 /***/ }),
 
-/***/ 183:
+/***/ 184:
 /*!*************************************!*\
-  !*** G:/Dcloud/EDU/common/num.json ***!
+  !*** E:/Dcloud/EDU/common/num.json ***!
   \*************************************/
 /*! exports provided: 0, 1, 2, 3, 4, 5, default */
 /***/ (function(module) {
@@ -3004,7 +3004,7 @@ module.exports = ["无","0-1年","1-3年","3-5年","5-10年","十年以上"];
 
 /***/ 19:
 /*!*******************************************!*\
-  !*** G:/Dcloud/EDU/store/modules/user.js ***!
+  !*** E:/Dcloud/EDU/store/modules/user.js ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -3119,9 +3119,9 @@ var actions = {
 
 /***/ }),
 
-/***/ 191:
+/***/ 192:
 /*!*******************************************!*\
-  !*** G:/Dcloud/EDU/common/className.json ***!
+  !*** E:/Dcloud/EDU/common/className.json ***!
   \*******************************************/
 /*! exports provided: 0, 1, 2, default */
 /***/ (function(module) {
@@ -8662,7 +8662,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8683,14 +8683,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -8766,7 +8766,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -9162,7 +9162,7 @@ internalMixin(Vue);
 
 /***/ 20:
 /*!*************************************!*\
-  !*** G:/Dcloud/EDU/config/index.js ***!
+  !*** E:/Dcloud/EDU/config/index.js ***!
   \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -9177,7 +9177,7 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ./local/config.js *
 
 /***/ 21:
 /*!****************************************!*\
-  !*** G:/Dcloud/EDU/config/api/user.js ***!
+  !*** E:/Dcloud/EDU/config/api/user.js ***!
   \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -9260,7 +9260,7 @@ function getUserOpenid(o) {
 
 /***/ 22:
 /*!********************************************!*\
-  !*** G:/Dcloud/EDU/config/local/config.js ***!
+  !*** E:/Dcloud/EDU/config/local/config.js ***!
   \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -9270,9 +9270,20 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.websiteUrl
 
 /***/ }),
 
-/***/ 221:
+/***/ 23:
+/*!*****************************************!*\
+  !*** E:/Dcloud/EDU/config/api/essay.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ 24:
 /*!*********************************************!*\
-  !*** G:/Dcloud/EDU/store/modules/common.js ***!
+  !*** E:/Dcloud/EDU/store/modules/common.js ***!
   \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -9299,20 +9310,9 @@ state, res) {
 
 /***/ }),
 
-/***/ 23:
-/*!*****************************************!*\
-  !*** G:/Dcloud/EDU/config/api/essay.js ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ 24:
+/***/ 25:
 /*!***********************************************!*\
-  !*** G:/Dcloud/EDU/common/global_variable.js ***!
+  !*** E:/Dcloud/EDU/common/global_variable.js ***!
   \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -9325,14 +9325,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 25:
+/***/ 26:
 /*!*******************************************!*\
-  !*** G:/Dcloud/EDU/common/loginStatus.js ***!
+  !*** E:/Dcloud/EDU/common/loginStatus.js ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(uni) {var _regeneratorRuntime = __webpack_require__(/*! ./node_modules/@vue/babel-preset-app/node_modules/@babel/runtime/regenerator */ 26);function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}module.exports = {
+/* WEBPACK VAR INJECTION */(function(uni) {var _regeneratorRuntime = __webpack_require__(/*! ./node_modules/@vue/babel-preset-app/node_modules/@babel/runtime/regenerator */ 27);function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}module.exports = {
   login: function () {var _login = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee(_this, url) {return _regeneratorRuntime.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:return _context.abrupt("return",
               new Promise(function (resolve, reject) {
                 uni.getStorage({
@@ -9367,18 +9367,18 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 26:
+/***/ 27:
 /*!*********************************************************************************************!*\
   !*** ./node_modules/@vue/babel-preset-app/node_modules/@babel/runtime/regenerator/index.js ***!
   \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ 27);
+module.exports = __webpack_require__(/*! regenerator-runtime */ 28);
 
 /***/ }),
 
-/***/ 27:
+/***/ 28:
 /*!************************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
   \************************************************************/
@@ -9409,7 +9409,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ 28);
+module.exports = __webpack_require__(/*! ./runtime */ 29);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -9426,7 +9426,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 28:
+/***/ 29:
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -10191,7 +10191,7 @@ module.exports = g;
 
 /***/ 4:
 /*!********************************!*\
-  !*** G:/Dcloud/EDU/pages.json ***!
+  !*** E:/Dcloud/EDU/pages.json ***!
   \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -11100,7 +11100,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 
 /***/ 7:
 /*!*************************************************!*\
-  !*** G:/Dcloud/EDU/pages.json?{"type":"style"} ***!
+  !*** E:/Dcloud/EDU/pages.json?{"type":"style"} ***!
   \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -11112,7 +11112,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ 8:
 /*!************************************************!*\
-  !*** G:/Dcloud/EDU/pages.json?{"type":"stat"} ***!
+  !*** E:/Dcloud/EDU/pages.json?{"type":"stat"} ***!
   \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {

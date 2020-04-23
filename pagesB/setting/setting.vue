@@ -153,23 +153,23 @@
 				let _this = this
 				let url
 				// #ifdef H5
-				url = `/api/upload`
+				url = `/api/qiniu`
 				// #endif
 				// #ifndef H5
-				url = `${this.GLOBAL.baseURL}/upload`
+				url = `${this.GLOBAL.baseURL}/qiniu`
 				// #endif
-				for(let i=0; i<data.length;i++){
-					uni.uploadFile({
+				let formData = new FormData();
+				data.forEach(e=>{
+					formData.append('file',e);
+					uni.request({
 						url: url,
-						filePath: data[i],
-						name: 'file',
-						formData: {},
+						type: 'POST',
+						data: formData,
 						success: (res) => {
 							_this.info.photo.push(res.data)
 						}
 					});
-				}
-				
+				})
 			},
 			submit(){
 				this.info.course = this.$store.state.user.userInfo.course

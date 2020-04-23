@@ -245,8 +245,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _photo = _interopRequireDefault(__webpack_require__(/*! ../../components/photo/photo.vue */ 106));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var ttNavBar = function ttNavBar() {__webpack_require__.e(/*! require.ensure | components/tt-nav-bar/tt-nav-bar */ "components/tt-nav-bar/tt-nav-bar").then((function () {return resolve(__webpack_require__(/*! @/components/tt-nav-bar/tt-nav-bar.vue */ 173));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var ttPicker = function ttPicker() {Promise.all(/*! require.ensure | components/tt-picker/tt-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tt-picker/tt-picker")]).then((function () {return resolve(__webpack_require__(/*! @/components/tt-picker/tt-picker.vue */ 180));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var ttLabels = function ttLabels() {Promise.all(/*! require.ensure | components/tt-labels/tt-labels */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tt-labels/tt-labels")]).then((function () {return resolve(__webpack_require__(/*! @/components/tt-labels/tt-labels.vue */ 188));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
-var qiniuUploader = __webpack_require__(/*! ../../components/qiniuUploader */ 114);var _default =
+var _photo = _interopRequireDefault(__webpack_require__(/*! ../../components/photo/photo.vue */ 106));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var ttNavBar = function ttNavBar() {__webpack_require__.e(/*! require.ensure | components/tt-nav-bar/tt-nav-bar */ "components/tt-nav-bar/tt-nav-bar").then((function () {return resolve(__webpack_require__(/*! @/components/tt-nav-bar/tt-nav-bar.vue */ 173));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var ttPicker = function ttPicker() {Promise.all(/*! require.ensure | components/tt-picker/tt-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tt-picker/tt-picker")]).then((function () {return resolve(__webpack_require__(/*! @/components/tt-picker/tt-picker.vue */ 180));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var ttLabels = function ttLabels() {Promise.all(/*! require.ensure | components/tt-labels/tt-labels */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/tt-labels/tt-labels")]).then((function () {return resolve(__webpack_require__(/*! @/components/tt-labels/tt-labels.vue */ 188));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   components: { ttNavBar: ttNavBar, ttPicker: ttPicker, ttLabels: ttLabels, Photo: _photo.default },
   data: function data() {
@@ -264,8 +263,24 @@ var qiniuUploader = __webpack_require__(/*! ../../components/qiniuUploader */ 11
 
   },
   created: function created() {
+    this.init();
   },
   methods: {
+    init: function init() {
+      wx.getSetting({
+        success: function success(res) {
+          if (!res.authSetting['scope.writePhotosAlbum']) {
+            wx.authorize({
+              scope: 'scope.writePhotosAlbum',
+              success: function success() {
+                // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
+                // wx.startRecord()
+              } });
+
+          }
+        } });
+
+    },
     map: function map() {
       var _this = this;
       new Promise(function (resolve, reject) {
@@ -291,8 +306,6 @@ var qiniuUploader = __webpack_require__(/*! ../../components/qiniuUploader */ 11
       this.texarea = data;
     },
     getPhoto: function getPhoto(data) {
-      // this.info.photo = data
-      console.log(data);
       var _this = this;
       var url;
 
@@ -314,7 +327,7 @@ var qiniuUploader = __webpack_require__(/*! ../../components/qiniuUploader */ 11
     uploadQiniu: function uploadQiniu(imgPath, token) {
       var _this = this;
       wx.uploadFile({
-        url: 'https://upload.qiniup.com',
+        url: 'https://up.qiniup.com',
         name: 'file',
         filePath: imgPath,
         header: {
@@ -329,7 +342,13 @@ var qiniuUploader = __webpack_require__(/*! ../../components/qiniuUploader */ 11
           _this.info.photo.push(url);
         },
         fail: function fail(res) {
-          console.log(res);
+          var err = JSON.stringify(res);
+          uni.showToast({
+            title: err,
+            icon: 'none',
+            position: 'top',
+            duration: 5000 });
+
         } });
 
     },
@@ -349,6 +368,12 @@ var qiniuUploader = __webpack_require__(/*! ../../components/qiniuUploader */ 11
           position: 'bottom',
           duration: 600 });
 
+        setTimeout(function () {
+          console.log(url);
+          uni.switchTab({
+            url: "../../pagesB/my/my" });
+
+        }, 600);
       });
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

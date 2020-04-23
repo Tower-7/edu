@@ -106,7 +106,6 @@
 	import ttPicker from '@/components/tt-picker/tt-picker.vue'
 	import ttLabels from '@/components/tt-labels/tt-labels.vue'
 	import Photo from '../../components/photo/photo.vue'
-	const qiniuUploader = require("../../components/qiniuUploader");
 	export default {
 		components:{ttNavBar,ttPicker,ttLabels,Photo},
 		data() {
@@ -124,8 +123,24 @@
 			}
 		},
 		created(){
+			this.init()
 		},
 		methods: {
+			init(){
+				wx.getSetting({
+				  success(res) {
+				    if (!res.authSetting['scope.writePhotosAlbum']) {
+				      wx.authorize({
+				        scope: 'scope.writePhotosAlbum',
+				        success () {
+				          // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
+				          // wx.startRecord()
+				        }
+				      })
+				    }
+				  }
+				})
+			},
 			map(){
 				let _this = this
 				new Promise((resolve,reject)=>{
@@ -151,8 +166,6 @@
 				this.texarea = data
 			},
 			getPhoto(data){
-				// this.info.photo = data
-				console.log(data)
 				let _this = this
 				let url
 				// #ifdef H5
@@ -174,7 +187,7 @@
 			uploadQiniu(imgPath,token) {
 				let _this = this
 			    wx.uploadFile({
-			      url: 'https://upload.qiniup.com',
+			      url: 'https://up.qiniup.com',
 			      name: 'file',
 			      filePath: imgPath,
 			      header: {
@@ -189,7 +202,13 @@
 					_this.info.photo.push(url)
 			     },
 			     fail: function(res) {
-			       console.log(res)
+				   let err = JSON.stringify(res)
+				   uni.showToast({
+				    title: err,
+				   	icon: 'none',
+				   	position: 'top',
+				       duration: 5000
+				   })
 			     }
 			   });
 			},
@@ -209,6 +228,12 @@
 						position: 'bottom',
 					    duration: 600
 					});
+					setTimeout(function(){
+						console.log(url)
+						uni.switchTab({
+							url: `../../pagesB/my/my`
+						})
+					},600)
 				})
 			}
 		}

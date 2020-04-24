@@ -69,10 +69,9 @@
 			},
 			getImgList(data){
 				let _this = this
-				_this.$store.dispatch('getQiniuToken',data[0])
+				_this.$store.dispatch('upload',data[0])
 				.then((res)=>{
-					let data = JSON.parse(res.data)
-					_this.image = _this.uploadFile = `https://qiniu.ishuber.com/${data.key}`
+					_this.image = _this.uploadFile = res
 				})
 			},
 			submit(){

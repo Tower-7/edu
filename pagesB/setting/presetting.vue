@@ -45,7 +45,6 @@
 				uni.navigateBack()
 			},
 			chrole(role){
-				console.log(this.userInfo)
 				this.confirm().then(()=>{
 					let userInfo = this.userInfo
 					if(userInfo.role){
@@ -58,22 +57,21 @@
 						return
 					}
 					userInfo.role = role
-					delete userInfo.meta
-					delete userInfo.__v
-					this.$store.dispatch('chrole',userInfo)
-					if(role == 1){
-						uni.navigateTo({
-							url: `../setting/setting`
-						})
-					}
-					else{
-						uni.showToast({
-						    title: '暂未开通',
-							icon: 'none',
-							position: 'bottom',
-						    duration: 500
-						});
-					}
+					this.$store.dispatch('updateUser',userInfo).then(()=>{
+						if(role == 1){
+							uni.navigateTo({
+								url: `../setting/setting`
+							})
+						}
+						else{
+							uni.showToast({
+							    title: '暂未开通',
+								icon: 'none',
+								position: 'bottom',
+							    duration: 500
+							});
+						}
+					})
 				})
 			},
 			confirm(){

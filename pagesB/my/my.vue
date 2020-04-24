@@ -5,7 +5,7 @@
 			<view class="tt-nav-height" :style="{paddingTop:statusBarHeight}"></view>
 			<view class="user_info">
 				<view class="avatar">
-					<image :src="userInfo.avatarUrl" mode="" @click="previewAavatar(userInfo.avatarUrl)"></image>
+					<image :src="userInfo.avatarUrl" mode="" @click="chAavatar(userInfo.avatarUrl)"></image>
 				</view>
 				<view class="text">
 					<text>{{userInfo.signature}}</text>
@@ -100,14 +100,34 @@
 					})
 				}
 			},
-			previewAavatar(avatar){
-				var current = avatar
-				this.avatar = []
-				this.avatar.push(current)
-				uni.previewImage({
-					current: current,
-					urls: this.avatar
+			chAavatar(avatar){
+				let _this = this
+				new Promise((resolve,reject)=>{
+					uni.chooseImage({
+					    count: 1, 
+					    sizeType: ['compressed'],
+					    sourceType: ['album'], 
+					    success: function (res) {
+							_this.$store.dispatch('upload',res.tempFilePaths[0])
+							.then((res)=>{
+								resolve(res)
+							})
+					    }
+					});
+				}).then((res)=>{
+					_this.userInfo.avatarUrl = res
+					return new Promise((resolve,reject)=>{
+						_this.$store.dispatch('updateUser',_this.userInfo)
+					})
+				}).then((res)=>{
+					uni.showToast({
+					    title: res.data.msg,
+						icon: 'none',
+						position: 'bottom',
+					    duration: 600
+					});
 				})
+				
 			},
 			setting(){
 				let _this = this

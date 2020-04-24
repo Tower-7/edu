@@ -168,22 +168,16 @@
 			getPhoto(data){
 				let _this = this
 				data.forEach(e=>{
-					_this.$store.dispatch('getQiniuToken',e)
+					_this.$store.dispatch('upload',e)
 					.then((res)=>{
-						let data = JSON.parse(res.data)
-						let url = `https://qiniu.ishuber.com/${data.key}`
-						_this.info.photo.push(url)
+						_this.info.photo.push(res)
 					})
 				})
 			},
 			submit(){
 				this.info.course = this.$store.state.user.userInfo.course
 				let userInfo = this.info
-				let url = `${this.$store.state.baseURL}/m/user_submit`
-				let data = {
-					url,
-					userInfo
-				}
+				let data = userInfo
 				this.$store.dispatch('updateUser',data)
 				.then((res)=>{
 					uni.showToast({
@@ -193,7 +187,6 @@
 					    duration: 600
 					});
 					setTimeout(function(){
-						console.log(url)
 						uni.switchTab({
 							url: `../../pagesB/my/my`
 						})

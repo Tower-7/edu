@@ -49,7 +49,7 @@ const mutations = {
 		
 }
 const actions = {
-	getOpenId({ state,commit,rootState },o){
+	getOpenId({ state,commit },o){
 		return new Promise((resolve, reject) => {
 			 uni.request({
 				url: o,
@@ -70,57 +70,21 @@ const actions = {
 			
 		})
 	},
-	updateUser({ state,commit },payload){
-			delete payload.userInfo.meta
-			delete payload.userInfo.__v
+	updateUser({ commit },o){
+			delete o.meta
+			delete o.__v
 			return new Promise((resolve,reject)=>{
-				uni.request({
-				    url: payload.url,
-					method: 'POST',
-				    data: payload.userInfo,
-				    success: (res) => {
-						if(res.statusCode===200){
-							commit(USER_INFO,payload.userInfo)
-							resolve(res)
-						}
-				    }
-				});
+				apiUser.update(o).then((res)=>{
+					commit(USER_INFO,o)
+					resolve(res)
+				})
 			})
 		
-	},
-	chrole({ state,commit },o){
-		apiUser.userSubmit(o).then((res)=>{
-			commit(USER_INFO,o)
-		})
 	},
 	getUserList({ commit },o){
 		apiUser.getUserList(o).then((res)=>{
 			commit(USER_LIST,res.data)
 		})
-	},
-	getQiniuToken({ commit,dispatch }, o){
-		return new Promise((resolve,reject)=>{
-			apiUser.getToken().then((res)=>{
-				resolve(res)
-			})
-		})
-		.then((res)=>{
-			return new Promise((resolve,reject)=>{
-				apiUser.upload(o,res.data.uploadToken).then((res)=>{
-					resolve(res)
-					
-				}).catch((res)=>{
-					let err = JSON.stringify(res)
-					uni.showToast({
-					title: err,
-					icon: 'none',
-					position: 'top',
-					   duration: 5000
-					})
-				})
-			})
-		})
-		
 	}
 }
 

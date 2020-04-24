@@ -16,7 +16,7 @@
 				</view>
 				<view class="pic">
 					<view class="avatar">
-						<image :src="teacher.avatarUrl" mode="widthFix"></image>
+						<image :src="teacher.avatarUrl" @click="preAvatar" mode="widthFix"></image>
 					</view>
 					<view class="icons text uni-flex">
 						<text class="icon">&#xe63e;</text>
@@ -90,6 +90,7 @@
 </template>
 
 <script>
+	import { mapState } from 'vuex'
 	import ttNavBar from '@/components/tt-nav-bar/tt-nav-bar.vue'
 	export default {
 		components:{ttNavBar},
@@ -120,6 +121,9 @@
 				},
 			}
 		},
+		computed: {
+			
+		},
 		mounted(){
 			this.getData()
 		},
@@ -136,7 +140,16 @@
 				var current = e.target.dataset.src
 				uni.previewImage({
 					current: current,
-					urls: this.imageList
+					urls: this.teacher.photo
+				})
+			},
+			preAvatar(){
+				let current =this.teacher.avatarUrl
+				let urls =[]
+				urls.push(current)
+				uni.previewImage({
+					current,
+					urls
 				})
 			},
 			getData(){

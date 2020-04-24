@@ -9,6 +9,7 @@ webUrl = localConfig.websiteUrl
 
 let login_url = `${webUrl}/m/login`
 let userSubmit_url = `${webUrl}/m/user_submit`
+let update_url = `${webUrl}/m/user_submit`
 let getUser_url = `${webUrl}/m/user_list`
 let getToken_url = `${webUrl}/qiniu/config`
 
@@ -40,6 +41,21 @@ function userSubmit(o){
 	})
 }
 
+function update(o){
+	return new Promise((resolve,reject)=>{
+		uni.request({
+		    url: update_url,
+			method: 'POST',
+		    data: o,
+		    success: (res) => {
+				if(res.statusCode===200){
+					resolve(res)
+				}
+		    }
+		});
+	})
+	
+}
 function getUserList(o){
 	return new Promise((resolve,reject)=>{
 		uni.request({
@@ -105,5 +121,6 @@ export default {
 	getUserList,
 	login,
 	getToken,
-	upload
+	upload,
+	update
 }

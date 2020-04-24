@@ -321,7 +321,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 125:
+/***/ 124:
 /*!*******************************************************************!*\
   !*** E:/Dcloud/EDU/main.js?{"page":"components%2Fphoto%2Fphoto"} ***!
   \*******************************************************************/
@@ -338,5 +338,5 @@ createPage(_photo.default);
 
 /***/ })
 
-},[[125,"common/runtime","common/vendor"]]]);
+},[[124,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/components/photo/photo.js.map

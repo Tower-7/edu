@@ -5,7 +5,7 @@
 			<view class="tt-nav-height" :style="{paddingTop:statusBarHeight}"></view>
 			<view class="user_info">
 				<view class="avatar">
-					<image :src="userInfo.avatarUrl" mode=""></image>
+					<image :src="userInfo.avatarUrl" mode="" @click="previewAavatar(userInfo.avatarUrl)"></image>
 				</view>
 				<view class="text">
 					<text>{{userInfo.signature}}</text>
@@ -72,7 +72,8 @@
 				backgroundColor: 'transparent',
 				openid: '',
 				url: '../../pagesB/my/my',
-				urlId: '1'
+				urlId: '1',
+				avatar: [],
 			}
 		},
 		computed: {
@@ -98,6 +99,15 @@
 						url:"../setting/presetting"
 					})
 				}
+			},
+			previewAavatar(avatar){
+				var current = avatar
+				this.avatar = []
+				this.avatar.push(current)
+				uni.previewImage({
+					current: current,
+					urls: this.avatar
+				})
 			},
 			setting(){
 				let _this = this

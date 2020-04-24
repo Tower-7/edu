@@ -1,1 +1,0 @@
-<view><view class="wrap"><view class="logo"><image src="../../static/logo.png" mode="widthFix"></image></view><view><button open-type="getUserInfo" data-event-opts="{{[['getuserinfo',[['bindGetUserInfo',['$event']]]]]}}" bindgetuserinfo="__e">微信登录</button></view></view></view>

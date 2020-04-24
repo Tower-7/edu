@@ -7,15 +7,9 @@
 			:id="'l'+index"
 			>
 				<view>
-					<image class="pic" 
-					:class="item.text?'':'boder_radius'"
-					:src="item.pic?item.pic:'../../static/home/2.jpg'" 
-					:data-src="item.pic" 
-					mode="widthFix" 
-					@load="onImgLoad('l',index,item.pic)" 
-					v-show="item.pic"></image>
+					<image class="pic" :src="item.pic?item.pic:'../../static/home/2.jpg'" :data-src="item.pic" mode="widthFix" @load="onImgLoad('l',index,item.pic)" v-show="item.pic"></image>
 				</view>
-				<view class="text" v-show="item.text">
+				<view class="">
 					<text>{{item.text}}</text>
 				</view>
 			</view>
@@ -27,15 +21,9 @@
 			:id="'r'+index"
 			>
 				<view>
-					<image class="pic" 
-					:class="boder_radius"
-					:src="item.pic?item.pic:'../../static/home/2.jpg'" 
-					:data-src="item.pic" 
-					mode="widthFix"
-					 @load="onImgLoad('r',index,item.pic)" 
-					 v-show="item.pic"></image>
+					<image class="pic" :src="item.pic?item.pic:'../../static/home/2.jpg'" :data-src="item.pic" mode="widthFix" @load="onImgLoad('r',index,item.pic)" v-show="item.pic"></image>
 				</view>
-				<view class="text">
+				<view class="">
 					<text>{{item.text}}</text>
 				</view>
 			</view>
@@ -121,11 +109,7 @@
 </script>
 
 <style lang="scss">
-	page {
-		background-color: #f2f5f7;
-	}
 	.community{
-		height: 100%;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -139,22 +123,15 @@
 	}
 	.list{
 		position: relative;
-		width: 95%;
+		width: 85%;
 		margin: 2.5%;
+		padding: 5%;
 		border-radius: 15rpx;
+		box-shadow:2px 2px 5px #888;
 		font-size: $uni-font-size-base;
 		color: #555;
-		background-color: #fff;
 		.pic{
 			width: 100%;
-			border-top-left-radius: 15rpx;
-			border-top-right-radius: 15rpx;
-		}
-		.boder_radius{
-			border-radius: 15rpx;
-		}
-		.text{
-			padding: 20rpx;
 		}
 	}
 	.addCom{

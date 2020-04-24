@@ -18,6 +18,7 @@
 		font-family: 'iconfont';
 		src: url('~@/static/iconfont.ttf') format('truetype');
 	}
+	
 	.icon {
 		font-family: iconfont;
 		margin-right: 50upx;

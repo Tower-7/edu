@@ -2931,7 +2931,8 @@ var index_esm = {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _mutationTypes = __webpack_require__(/*! ../mutation-types.js */ 18);function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _mutationTypes = __webpack_require__(/*! ../mutation-types.js */ 18);
+var _config = __webpack_require__(/*! ../../config */ 20);function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 var state = {
   list: [] };
@@ -2942,23 +2943,12 @@ _mutationTypes.ESSAY_LIST, function (state, res) {
 });
 
 var actions = {
-  getEssayList: function getEssayList(_ref, payload) {var commit = _ref.commit;
-    console.log(payload);
+  getEssayList: function getEssayList(_ref, o) {var commit = _ref.commit;
     return new Promise(function (resolve, reject) {
-      uni.request({
-        url: payload.url,
-        method: 'POST',
-        data: payload.data,
-        success: function success(res) {
-          console.log(res);
-          commit(_mutationTypes.ESSAY_LIST, res);
-          resolve(res);
-        },
-        fail: function fail(err) {
-          console.log(err);
-        } });
-
-
+      _config.apiEssay.getList(o).then(function (res) {
+        commit(_mutationTypes.ESSAY_LIST, res);
+        resolve(res);
+      });
     });
   } };var _default =
 
@@ -2967,7 +2957,6 @@ var actions = {
   state: state,
   mutations: mutations,
   actions: actions };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
@@ -3015,7 +3004,8 @@ var _config = __webpack_require__(/*! @/config */ 20);var _mutations;function _d
 
 var state = {
   userInfo: {},
-  userList: [] };
+  userList: [],
+  photoList: {} };
 
 var mutations = (_mutations = {}, _defineProperty(_mutations,
 _mutationTypes.USER_INFO, function (state, data) {
@@ -3108,6 +3098,30 @@ var actions = {
     _config.apiUser.getUserList(o).then(function (res) {
       commit(_mutationTypes.USER_LIST, res.data);
     });
+  },
+  getQiniuToken: function getQiniuToken(_ref6, o) {var commit = _ref6.commit,dispatch = _ref6.dispatch;
+    return new Promise(function (resolve, reject) {
+      _config.apiUser.getToken().then(function (res) {
+        resolve(res);
+      });
+    }).
+    then(function (res) {
+      return new Promise(function (resolve, reject) {
+        _config.apiUser.upload(o, res.data.uploadToken).then(function (res) {
+          resolve(res);
+
+        }).catch(function (res) {
+          var err = JSON.stringify(res);
+          uni.showToast({
+            title: err,
+            icon: 'none',
+            position: 'top',
+            duration: 5000 });
+
+        });
+      });
+    });
+
   } };var _default =
 
 
@@ -9195,6 +9209,7 @@ webUrl = localConfig.websiteUrl;
 var login_url = "".concat(webUrl, "/m/login");
 var userSubmit_url = "".concat(webUrl, "/m/user_submit");
 var getUser_url = "".concat(webUrl, "/m/user_list");
+var getToken_url = "".concat(webUrl, "/qiniu/config");
 
 function login(o) {
   return new Promise(function (resolve, reject) {
@@ -9248,12 +9263,48 @@ function getUserOpenid(o) {
       } });
 
   });
+}
+
+function getToken() {
+  return new Promise(function (resolve, reject) {
+    uni.request({
+      url: getToken_url,
+      type: 'GET',
+      success: function success(res) {
+        resolve(res);
+      } });
+
+  });
+}
+
+function upload(o, token) {
+  return new Promise(function (resolve, reject) {
+    wx.uploadFile({
+      url: 'https://up.qiniup.com',
+      name: 'file',
+      filePath: o,
+      header: {
+        "Content-Type": "multipart/form-data" },
+
+      formData: {
+        token: token },
+
+      success: function success(res) {
+        resolve(res);
+      },
+      fail: function fail(res) {
+        reject(res);
+      } });
+
+  });
 }var _default =
 
 {
   userSubmit: userSubmit,
   getUserList: getUserList,
-  login: login };exports.default = _default;
+  login: login,
+  getToken: getToken,
+  upload: upload };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
@@ -9275,9 +9326,41 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.websiteUrl
   !*** E:/Dcloud/EDU/config/api/essay.js ***!
   \*****************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var localConfig = _interopRequireWildcard(__webpack_require__(/*! ../local/config */ 22));function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}
+var webUrl;
 
 
+
+
+webUrl = localConfig.websiteUrl;
+
+
+
+var list_url = "".concat(webUrl, "/m/essay_list");
+
+function getList(o) {
+  return new Promise(function (resolve, reject) {
+    uni.request({
+      url: list_url,
+      method: 'POST',
+      data: o,
+      success: function success(res) {
+        resolve(res);
+      },
+      fail: function fail(err) {
+        console.log(err);
+      } });
+
+
+  });
+}var _default =
+
+{
+  getList: getList };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
@@ -9333,7 +9416,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(uni) {var _regeneratorRuntime = __webpack_require__(/*! ./node_modules/@vue/babel-preset-app/node_modules/@babel/runtime/regenerator */ 27);function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}module.exports = {
-  login: function () {var _login = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee(_this, url) {return _regeneratorRuntime.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:return _context.abrupt("return",
+  login: function () {var _login = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee(_this) {return _regeneratorRuntime.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:return _context.abrupt("return",
               new Promise(function (resolve, reject) {
                 uni.getStorage({
                   key: 'userInfo',
@@ -9356,13 +9439,44 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
                   duration: 500 });
 
                 setTimeout(function () {
-                  console.log(url);
                   uni.navigateTo({
-                    url: "../../pages/login/login?url=".concat(url) });
+                    url: "../../pages/login/login?url=".concat(_this.url, "&urlId=").concat(_this.urlId) });
 
                 }, 500);
 
-              }));case 1:case "end":return _context.stop();}}}, _callee);}));function login(_x, _x2) {return _login.apply(this, arguments);}return login;}() };
+              }));case 1:case "end":return _context.stop();}}}, _callee);}));function login(_x) {return _login.apply(this, arguments);}return login;}(),
+
+  status: function () {var _status = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee2(_this) {return _regeneratorRuntime.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:return _context2.abrupt("return",
+              new Promise(function (resolve, reject) {
+                uni.getStorage({
+                  key: 'userInfo',
+                  success: function success(res) {
+                    resolve(res);
+                  },
+                  fail: function fail(err) {
+                    reject(err);
+                  } });
+
+              }).
+              then(function (res) {
+                uni.navigateTo({
+                  url: _this.url });
+
+              }).
+              catch(function (err) {
+                uni.showToast({
+                  title: '请先登录',
+                  icon: 'none',
+                  position: 'bottom',
+                  duration: 500 });
+
+                setTimeout(function () {
+                  uni.navigateTo({
+                    url: "../../pages/login/login?url=".concat(_this.url, "&urlId=").concat(_this.urlId) });
+
+                }, 500);
+
+              }));case 1:case "end":return _context2.stop();}}}, _callee2);}));function status(_x2) {return _status.apply(this, arguments);}return status;}() };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

@@ -4,6 +4,7 @@ import { apiUser } from '@/config'
 const state = {
    userInfo:{},
    userList: [],
+   photoList: {}
 }
 const mutations = {
 	[USER_INFO](state,data){
@@ -96,6 +97,30 @@ const actions = {
 		apiUser.getUserList(o).then((res)=>{
 			commit(USER_LIST,res.data)
 		})
+	},
+	getQiniuToken({ commit,dispatch }, o){
+		return new Promise((resolve,reject)=>{
+			apiUser.getToken().then((res)=>{
+				resolve(res)
+			})
+		})
+		.then((res)=>{
+			return new Promise((resolve,reject)=>{
+				apiUser.upload(o,res.data.uploadToken).then((res)=>{
+					resolve(res)
+					
+				}).catch((res)=>{
+					let err = JSON.stringify(res)
+					uni.showToast({
+					title: err,
+					icon: 'none',
+					position: 'top',
+					   duration: 5000
+					})
+				})
+			})
+		})
+		
 	}
 }
 

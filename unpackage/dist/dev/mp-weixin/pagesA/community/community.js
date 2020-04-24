@@ -175,7 +175,9 @@ var _default =
       llist: [],
       rlist: [],
       ltop: 0,
-      rtop: 0 };
+      rtop: 0,
+      url: '/pagesA/article/article',
+      urlId: '0' };
 
   },
   created: function created() {
@@ -185,22 +187,14 @@ var _default =
     getData: function getData() {var _this2 = this;
       var start = 0;
       var num = 20;
-      var url;
-
-
-
-
-      url = "".concat(this.$store.state.baseURL, "/m/essay_list");
-
 
       var data = {
         start: start,
         num: num };
 
       var _this = this;
-      this.$store.dispatch('getEssayList', { url: url, data: data }).
+      this.$store.dispatch('getEssayList', { data: data }).
       then(function (res) {
-        console.log(res);
         _this2.essay = _this2.$store.state.essay.list;
         _this2.llist.push(_this2.essay[0]);
         _this2.essay.shift();
@@ -239,8 +233,8 @@ var _default =
       this.getData();
     },
     addCom: function addCom() {
-      uni.navigateTo({
-        url: '/pagesA/article/article' });
+
+      this.$loginStatus.status(this, this.url);
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

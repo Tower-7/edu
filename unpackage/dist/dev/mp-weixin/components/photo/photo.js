@@ -198,7 +198,6 @@ var sizeType = [
                   count: this.imageList.length + this.count[this.countIndex] > 9 ? 9 - this.imageList.length : this.count[this.countIndex],
                   success: function success(res) {
                     // console.log(res)
-                    _this.imageList = _this.imageList.concat(res.tempFilePaths);
                     _this.$emit('getPhoto', res.tempFilePaths);
                   },
                   fail: function fail(err) {

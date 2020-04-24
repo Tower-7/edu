@@ -194,10 +194,10 @@ __webpack_require__.r(__webpack_exports__);
     this.getSystemInfo();
   },
   methods: {
-    getSystemInfo: function getSystemInfo() {var _this = this;
+    getSystemInfo: function getSystemInfo() {var _this2 = this;
       uni.getSystemInfo({
         success: function success(res) {
-          _this.statusBarHeight = res.statusBarHeight - 1 + 'px';
+          _this2.statusBarHeight = res.statusBarHeight - 1 + 'px';
         } });
 
     },
@@ -207,25 +207,13 @@ __webpack_require__.r(__webpack_exports__);
     chooseImage: function chooseImage() {
       this.$refs.addImage.chooseImage();
     },
-    getImgList: function getImgList(data) {var _this2 = this;
-      this.image = data[0];
-      var url;
-
-
-
-
-      url = "".concat(this.GLOBAL.baseURL, "/upload");
-
-      uni.uploadFile({
-        url: url,
-        filePath: data[0],
-        name: 'file',
-        formData: {},
-        success: function success(res) {
-          _this2.uploadFile = res.data;
-        } });
-
-
+    getImgList: function getImgList(data) {
+      var _this = this;
+      _this.$store.dispatch('getQiniuToken', data[0]).
+      then(function (res) {
+        var data = JSON.parse(res.data);
+        _this.image = _this.uploadFile = "https://qiniu.ishuber.com/".concat(data.key);
+      });
     },
     submit: function submit() {
       var id = this.id;

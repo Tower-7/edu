@@ -42,7 +42,9 @@
 				llist:[],
 				rlist:[],
 				ltop: 0,
-				rtop: 0
+				rtop: 0,
+				url: '/pagesA/article/article',
+				urlId: '0',
 			}
 		},
 		created() {
@@ -52,22 +54,14 @@
 			getData(){
 				let start = 0
 				let num =20
-				let url
-				// #ifdef H5
-				url = `/api/m/essay_list`
-				// #endif
-				// #ifndef H5
-				url = `${this.$store.state.baseURL}/m/essay_list`
-				// #endif
 				
 				let data = {
 					start: start,
 					num: num
 				}
 				let _this = this
-				this.$store.dispatch('getEssayList',{url,data})
+				this.$store.dispatch('getEssayList',{data})
 				.then((res)=>{
-					console.log(res)
 					this.essay = this.$store.state.essay.list
 					this.llist.push(this.essay[0])
 					this.essay.shift()
@@ -106,9 +100,9 @@
 				this.getData()
 			},
 			addCom(){
-				uni.navigateTo({
-					url:'/pagesA/article/article'
-				})
+				// #ifdef MP-WEIXIN
+				this.$loginStatus.status(this,this.url)
+				// #endif
 			}
 		}
 	}

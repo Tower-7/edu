@@ -421,7 +421,8 @@ var _student = _interopRequireDefault(__webpack_require__(/*! ../../components/s
       statusBarHeight: statusBarHeight,
       backgroundColor: 'transparent',
       openid: '',
-      url: '../../pagesB/my/my' };
+      url: '../../pagesB/my/my',
+      urlId: '1' };
 
   },
   computed: _objectSpread({},
@@ -431,7 +432,7 @@ var _student = _interopRequireDefault(__webpack_require__(/*! ../../components/s
 
   onShow: function onShow() {
 
-    this.$loginStatus.login(this, this.url);
+    this.$loginStatus.login(this);
 
   },
   created: function created() {

@@ -307,50 +307,14 @@ var _photo = _interopRequireDefault(__webpack_require__(/*! ../../components/pho
     },
     getPhoto: function getPhoto(data) {
       var _this = this;
-      var url;
-
-
-
-
-      url = "".concat(this.GLOBAL.baseURL, "/qiniu/config");
-
       data.forEach(function (e) {
-        uni.request({
-          url: url,
-          type: 'GET',
-          success: function success(res) {
-            _this.uploadQiniu(e, res.data.uploadToken);
-          } });
-
-      });
-    },
-    uploadQiniu: function uploadQiniu(imgPath, token) {
-      var _this = this;
-      wx.uploadFile({
-        url: 'https://up.qiniup.com',
-        name: 'file',
-        filePath: imgPath,
-        header: {
-          "Content-Type": "multipart/form-data" },
-
-        formData: {
-          token: token },
-
-        success: function success(res) {
+        _this.$store.dispatch('getQiniuToken', e).
+        then(function (res) {
           var data = JSON.parse(res.data);
           var url = "https://qiniu.ishuber.com/".concat(data.key);
           _this.info.photo.push(url);
-        },
-        fail: function fail(res) {
-          var err = JSON.stringify(res);
-          uni.showToast({
-            title: err,
-            icon: 'none',
-            position: 'top',
-            duration: 5000 });
-
-        } });
-
+        });
+      });
     },
     submit: function submit() {
       this.info.course = this.$store.state.user.userInfo.course;
@@ -578,7 +542,6 @@ var sizeType = [
                   count: this.imageList.length + this.count[this.countIndex] > 9 ? 9 - this.imageList.length : this.count[this.countIndex],
                   success: function success(res) {
                     // console.log(res)
-                    _this.imageList = _this.imageList.concat(res.tempFilePaths);
                     _this.$emit('getPhoto', res.tempFilePaths);
                   },
                   fail: function fail(err) {

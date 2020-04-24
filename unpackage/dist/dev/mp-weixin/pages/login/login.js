@@ -158,7 +158,10 @@ var _mutationTypes = __webpack_require__(/*! @/store/mutation-types.js */ 18); /
 //
 //
 //
-var _default = { data: function data() {return { rawData: '', origin_url: '', userInfo: '' };}, onLoad: function onLoad(option) {this.origin_url = option.url;}, methods: { bindGetUserInfo: function bindGetUserInfo(e) {
+var _default = { data: function data() {return { rawData: '', origin_url: '', origin_id: '', userInfo: '' };}, onLoad: function onLoad(option) {console.log(option);this.origin_url = option.url;this.origin_id = option.urlId;
+  },
+  methods: {
+    bindGetUserInfo: function bindGetUserInfo(e) {
       var _this = this;
 
       if (e.detail.userInfo) {
@@ -184,9 +187,16 @@ var _default = { data: function data() {return { rawData: '', origin_url: '', us
                 });
               }).
               then(function (res) {
-                uni.switchTab({
-                  url: _this.origin_url });
+                if (_this.origin_id === '0') {
+                  uni.navigateTo({
+                    url: _this.origin_url });
 
+                } else
+                {
+                  uni.switchTab({
+                    url: _this.origin_url });
+
+                }
               });
             } else {
               console.log('登录失败！' + res.errMsg);

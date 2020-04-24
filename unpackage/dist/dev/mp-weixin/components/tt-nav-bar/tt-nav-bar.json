@@ -1,6 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "tt-status-bar": "/components/tt-status-bar/tt-status-bar"
-  }
-}

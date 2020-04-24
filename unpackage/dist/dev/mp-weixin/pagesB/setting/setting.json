@@ -1,9 +1,0 @@
-{
-  "navigationStyle": "custom",
-  "usingComponents": {
-    "tt-nav-bar": "/components/tt-nav-bar/tt-nav-bar",
-    "tt-picker": "/components/tt-picker/tt-picker",
-    "tt-labels": "/components/tt-labels/tt-labels",
-    "photo": "/components/photo/photo"
-  }
-}

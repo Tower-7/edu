@@ -12,6 +12,7 @@ let userSubmit_url = `${webUrl}/m/user_submit`
 let update_url = `${webUrl}/m/user_submit`
 let getUser_url = `${webUrl}/m/user_list`
 let getToken_url = `${webUrl}/qiniu/config`
+let userDetail_url = `${webUrl}/m/user_detail`
 
 function login(o){
 	return new Promise((resolve, reject) => {
@@ -82,45 +83,24 @@ function getUserOpenid(o){
 	})
 }
 
-function getToken(){
+function getUserById(o){
 	return new Promise((resolve,reject)=>{
 		uni.request({
-			url: getToken_url,
-			type: 'GET',
-			success:(res)=> {
-				resolve(res)
+			url: `${userDetail_url}/${o}`,
+			method: 'GET',
+			success(res) {
+				resolve(res.data.data[0])
 			}
 		})
 	})
 }
 
-function upload(o,token){
-	return new Promise((resolve,reject)=>{
-		wx.uploadFile({
-		   url: 'https://up.qiniup.com',
-		   name: 'file',
-		   filePath: o,
-		   header: {
-		     "Content-Type": "multipart/form-data"
-		   },
-		  formData: {
-		    token: token,
-		  },
-		  success: function(res) {
-				resolve(res)
-		  },
-		  fail: function(res) {
-				reject(res)
-		  }
-		});
-	})
-}
+
 
 export default {
 	userSubmit,
 	getUserList,
 	login,
-	getToken,
-	upload,
-	update
+	update,
+	getUserById
 }

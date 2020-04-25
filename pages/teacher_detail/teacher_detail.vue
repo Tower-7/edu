@@ -102,38 +102,15 @@
 				backgroundColor:'transparent',
 				title: '',
 				url: '',
-				teacher: {
-					avatar: '',
-					nickname: '',
-					phone: '',
-					addr: '',
-					lat:'',
-					lon:'',
-					signature: '',
-					experienceTime: '',
-					job: '',
-					school: '',
-					profession: '',
-					course: '',
-					photo: '',
-					experience: '',
-					intro: '',
-				},
 			}
 		},
 		computed: {
-			
-		},
-		mounted(){
-			this.getData()
+			...mapState({
+				teacher: state => state.user.userDetail
+			})
 		},
 		onLoad: function (option) {
-			// #ifdef H5
-			this.url = `/api/m/user_detail/${option.id}`
-			// #endif
-			// #ifndef H5
-			this.url = `${this.GLOBAL.baseURL}/m/user_detail/${option.id}`
-			// #endif
+			this.$store.dispatch('getUserById',option.id)
 		},
 		methods: {
 			previewImage(e) {
@@ -151,21 +128,6 @@
 					current,
 					urls
 				})
-			},
-			getData(){
-				uni.request({
-				    url: this.url,
-					method: 'GET',
-				    success: (res) => {
-						if(res.data.status===200){
-							this.teacher = res.data.data[0]
-							console.log(this.teacher)
-						}
-				    },
-					err: (res) => {
-						console.log(res)
-					}
-				});
 			},
 			back(){
 				uni.navigateBack()

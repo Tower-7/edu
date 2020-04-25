@@ -1,10 +1,11 @@
-import { USER_INFO,USER_LIST } from '../mutation-types.js'
+import { USER_INFO,USER_LIST,USER_DETAIL } from '../mutation-types.js'
 import { apiUser } from '@/config'
 
 const state = {
    userInfo:{},
    userList: [],
-   photoList: {}
+   photoList: {},
+   userDetail:{},
 }
 const mutations = {
 	[USER_INFO](state,data){
@@ -45,6 +46,9 @@ const mutations = {
 	},
 	[USER_LIST](state,data){
 		state.userList = data
+	},
+	[USER_DETAIL](state,o){
+		state.userDetail = o
 	}
 		
 }
@@ -84,6 +88,12 @@ const actions = {
 	getUserList({ commit },o){
 		apiUser.getUserList(o).then((res)=>{
 			commit(USER_LIST,res.data)
+		})
+	},
+	getUserById({commit},o){
+		console.log(o)
+		apiUser.getUserById(o).then((res)=>{
+			commit(USER_DETAIL,res)
 		})
 	}
 }

@@ -109,9 +109,6 @@
 				teacher: state => state.user.userDetail
 			})
 		},
-		onLoad: function (option) {
-			this.$store.dispatch('getUserById',option.id)
-		},
 		methods: {
 			previewImage(e) {
 				var current = e.target.dataset.src
@@ -144,7 +141,7 @@
 		onPageScroll(option) {
 			if(option.scrollTop > 5){
 				this.backgroundColor = 'rgba(0,0,0,0.5)'
-				this.title = '小z老师'
+				this.title = this.teacher.nickName
 			}
 			else{
 				this.backgroundColor = 'transparent'

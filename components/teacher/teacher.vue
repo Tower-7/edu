@@ -52,9 +52,12 @@
 				this.$store.dispatch('getUserList',data)
 			},
 			detail(id){
-				uni.navigateTo({
-					url: `../../pages/teacher_detail/teacher_detail?id=${id}`
+				this.$store.dispatch('getUserById',id).then((res)=>{
+					uni.navigateTo({
+						url: `../../pages/teacher_detail/teacher_detail`
+					})
 				})
+				
 			},
 			
 		},
